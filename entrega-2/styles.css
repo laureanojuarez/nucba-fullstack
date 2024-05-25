@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,34 +6,54 @@
   text-decoration: none;
   list-style: none;
   font-family: "Exo 2", sans-serif;
-  font-size: 15px;
+  font-size: 25px;
+  font-weight: 500;
+
   /* border: 1px solid red; */
 }
 
 body {
-  background-color: rgb(187, 247, 252);
+  background-color: rgb(10, 176, 191);
 }
 header {
-  background-color: white;
+  height: 75px;
+  margin: 15px;
+  padding: 0px 100px;
+  display: flex;
+  background-color: #ffffff;
   color: white;
-  padding: 10px 110px;
-  margin: 20px 60px;
+  border-radius: 15px;
+  border: #288aa0 solid;
+  justify-content: space-between;
 }
-img {
-  width: 50px;
-  height: 50px;
+
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.imagen img {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  border: #e6e6e6 solid;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-.opciones {
-  display: flex;
-  gap: 45px;
+  margin: 0px 150px;
 }
 
+.navbar .opciones {
+  display: flex;
+  gap: 50px;
+}
+
+.navbar .opciones li {
+  display: inline;
+}
 .opciones a {
-  color: rgb(11, 11, 11);
+  color: rgb(54, 54, 54);
 }
