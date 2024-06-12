@@ -76,15 +76,14 @@ a {
 }
 
 .about .info {
-  width: 80%;
-  gap: 50px;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   font-weight: 400;
   background-color: #b63a5d;
   color: #141514;
   border-radius: 50px;
   padding: 50px;
+  margin: 20px;
 }
 
 .bk {
@@ -126,6 +125,29 @@ a {
   .about {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-info h1 {
+    font-size: 40px;
+  }
+
+  .hero-info p {
+    font-size: 15px;
+  }
+
+  .button button,
+  a {
+    font-size: 15px;
+  }
+
+  .logo img {
+    width: 250px;
+  }
+
+  .about .info {
+    font-size: 20px;
   }
 }
