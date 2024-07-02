@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E3 - NUCBA</title>
     <link rel="stylesheet" href="assets/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -14,10 +18,13 @@
         id="img-icon"
       />
       <nav class="navbar">
-        <ul class="opciones">
+        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="toggle-menu" />
+
+        <ul class="navbar-list">
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Contenido</a></li>
-          <li><a href="#">Descargar</a></li>
+          <li><a href="#">Novedades</a></li>
         </ul>
       </nav>
     </header>
@@ -34,9 +41,9 @@
             <a href="#">Click para mas informacion</a>
           </div>
         </div>
-        <div class="logo">
-          <img src="/assets/Burger_King_2020.svg" alt="" />
-        </div>
+        <!-- <div class="logo"> -->
+        <img class="logo" src="/assets/Burger_King_2020.svg" alt="" />
+        <!-- </div> -->
       </section>
       <section class="about">
         <div class="info">
@@ -94,15 +101,18 @@
           <div class="ciudades">
             <div class="rosario">
               <h3>Santa Fe, Rosario</h3>
-              <p>CALLE FALSA</p>
-              <p>MAIL</p>
-              <p>NUMERO</p>
+              <i class="fa-solid fa-location-dot"> <span>Calle</span></i>
+              <i class="fa-solid fa-envelope"> <span>Mail</span></i>
+              <i class="fa-solid fa-phone"> <span>Numero</span></i>
             </div>
             <div class="baigorria">
               <h3>Santa Fe, Baigorria</h3>
-              <p>CALLE FALSA</p>
-              <p>MAIL</p>
-              <p>NUMERO</p>
+              <i class="fa-solid fa-location-dot">
+                <span>Calle</span>
+              </i>
+
+              <i class="fa-solid fa-envelope"> <span>Mail</span></i>
+              <i class="fa-solid fa-phone"> <span>Numero</span></i>
             </div>
           </div>
         </div>

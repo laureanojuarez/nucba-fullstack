@@ -9,12 +9,11 @@
 
 header {
   display: flex;
-  height: 10vh;
+  height: 80px;
   width: 100%;
-  padding: 0px 100px;
+  padding: 0px 50px;
   background-color: #ffffff;
-  color: white;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   border-bottom: 2px solid gray;
@@ -25,17 +24,30 @@ header {
   align-items: center;
 }
 
-.navbar .opciones {
+.navbar ul {
   display: flex;
   gap: 50px;
+  text-decoration: none;
+  list-style: none;
 }
 
-.opciones a {
-  color: rgb(54, 54, 54);
+.navbar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  text-align: 500;
+}
+.navbar i {
+  font-size: 25px;
+  display: none;
+}
+
+#toggle-menu {
+  display: none;
 }
 
 #img-icon {
-  height: 75px;
+  height: 70px;
 }
 main {
   display: flex;
@@ -46,12 +58,12 @@ main {
 
 .hero {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 80vh;
   width: 100%;
   background: linear-gradient(to bottom, #ba5370, #f4e2d8);
-  padding: 50px;
+  padding: 20px;
 }
 
 .hero-info {
@@ -76,7 +88,7 @@ main {
 }
 
 .button button,
-a {
+.button a {
   font-size: 17px;
   color: #141514;
   font-weight: 600;
@@ -90,20 +102,22 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: all;
+  transition-duration: 1s;
+  width: 350px;
 }
 
-.logo img {
-  width: 350px;
+.logo:hover {
+  width: 400px;
 }
 
 .about {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   background-color: #f4e2d8;
-  height: 50vh;
-  width: 100%;
+  height: 45vh;
+  padding: 20px;
 }
 
 .about .info {
@@ -113,7 +127,7 @@ a {
   background-color: #9e727f;
   color: #141514;
   padding: 50px;
-  margin: 20px;
+  border-radius: 15px;
 }
 
 .cards {
@@ -159,18 +173,21 @@ a {
 
 .contact {
   display: flex;
+  width: 100%;
   border-top: 2px solid grey;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  gap: 200px;
+  gap: 50px;
 }
 .contact-about {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 20px;
   border-radius: 25px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .ciudades {
@@ -182,7 +199,7 @@ a {
 .contactanos h3 {
   display: flex;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .mapa iframe {
@@ -197,15 +214,41 @@ a {
   gap: 30px;
 }
 
+.rosario i,
+.baigorria i {
+  display: flex;
+  gap: 20px;
+}
+
 @media (max-width: 992px) {
-  .navbar {
-    display: none;
+  header {
+    justify-content: space-between;
   }
-  .hero {
+  .navbar ul {
+    background-color: white;
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: absolute;
+    top: 80px;
+    left: 0;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar i {
+    display: block;
+  }
+
+  #toggle-menu:checked ~ .navbar-list {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
     gap: 20px;
-    height: 90vh;
+    height: 100vh;
   }
 
   .hero-info {
@@ -213,8 +256,8 @@ a {
     text-align: center;
   }
 
-  .logo img {
-    width: 200px;
+  .logo {
+    width: 250px;
   }
 
   .about {
@@ -233,13 +276,9 @@ a {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
   .hero-info {
     justify-content: center;
     align-items: center;
-    height: 100vh;
   }
   .hero-info h1 {
     text-align: center;
@@ -253,9 +292,6 @@ a {
 }
 
 @media (max-width: 576px) {
-  .navbar {
-    display: none;
-  }
   .hero-info h1 {
     font-size: 40px;
   }
@@ -267,10 +303,6 @@ a {
   .button button,
   a {
     font-size: 15px;
-  }
-
-  .logo img {
-    width: 250px;
   }
 
   .about .info {
