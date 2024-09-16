@@ -11,12 +11,27 @@ body {
   color: #fff;
   padding: 2rem;
 }
+main {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-principal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
 
-.product-card {
+.products-container {
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
