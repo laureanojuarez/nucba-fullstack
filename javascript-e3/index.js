@@ -45,5 +45,3 @@ const pizzas = [
     imagen: "./img/anana.png",
   },
 ];
-
-
