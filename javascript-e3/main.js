@@ -2,52 +2,59 @@ const productContainer = document.querySelector(".products-container");
 const boton = document.getElementById("boton");
 
 // LOCAL STORAGE
-const guardarStorage = (value) => {
-  localStorage.setItem("pizzaId", value);
+const guardarStorage = (id) => {
+  localStorage.setItem("pizzaId", id);
 };
 
 const cargarStorage = () => {
-  const savedPizzaId = localStorage.getItem("pizzaId");
-  if (savedPizzaId) {
-    document.getElementById("inputNumero").value = savedPizzaId;
+  return localStorage.getItem("pizzaId");
+};
+
+// FUNCION PARA RENDERIZAR LA PIZZA
+const renderPizza = (pizza) => {
+  if (pizza) {
+    productContainer.innerHTML = `
+  <div class="pizza-card">
+    <h2>${pizza.nombre}</h2>
+    <img src="${pizza.imagen}" alt="${pizza.nombre}">
+    <p>Precio: ${pizza.precio}</p>
+  </div>
+  `;
+  } else {
+    productContainer.innerHTML = ` ERROR: No existe una pizza con ese ID. `;
   }
 };
 
-// RENDERIZAR LOS PRODUCTOS
-
+// FUNCION PARA RENDERIZAR LOS PRODUCTOS
 const renderProducts = () => {
   boton.addEventListener("click", () => {
     const inputNumero = document.getElementById("inputNumero").value;
 
     if (!inputNumero) {
-      productContainer.innerHTML = `
-      Ingrese un numero
-      `;
+      productContainer.innerHTML = `Ingrese un numero `;
       return;
     }
-
-    guardarStorage(inputNumero);
 
     const pizza = pizzas.find((e) => e.id == inputNumero);
 
     if (pizza) {
-      productContainer.innerHTML = `
-      <div class="pizza-card">
-      <h2>${pizza.nombre}</h2>
-      <img src="${pizza.imagen}" alt="${pizza.nombre}">
-      <p>Precio: ${pizza.precio}</p>
-      </div>
-      `;
+      guardarStorage(inputNumero);
+      renderPizza(pizza);
     } else {
-      productContainer.innerHTML = `
-      ERROR: No existe una pizza con ese ID.
-      `;
+      productContainer.innerHTML = `ERROR: No existe una pizza con ese ID.`;
     }
   });
 };
 
 const init = () => {
-  cargarStorage();
+  const pizzaGuardada = cargarStorage();
+  if (pizzaGuardada) {
+    const pizza = pizzas.find((e) => e.id == pizzaGuardada);
+    if (pizza) {
+      document.getElementById("inputNumero").value = pizzaGuardada;
+      renderPizza(pizza);
+    }
+  }
   renderProducts();
 };
 
