@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>e4-javascript</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main>
-      <input type="number" name="" id="" />
-      <button></button>
-      <div class="container"></div>
+      <h1>Buscar Pokemon</h1>
+      <form id="form">
+        <input
+          type="number"
+          class="search-input"
+          placeholder="Ingresa un numero"
+        />
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="search-msg"></div>
+      <div id="pokemonContainer"></div>
     </main>
+    <script src="./request.js"></script>
+    <script src="./main.js"></script>
   </body>
-  <script src="./main.js"></script>
-  <script src="./request.js"></script>
 </html>
