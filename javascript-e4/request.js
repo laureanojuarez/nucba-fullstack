@@ -4,13 +4,9 @@ const requestPokemon = async (pokemonId) => {
       `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
     );
 
-    if (!response.ok) {
-      throw new Error("Pokémon no encontrado");
-    }
-
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(`Hubo un error en la petición: ${error}`);
+    console.error(`Error en la peticion: ${error}`);
   }
 };

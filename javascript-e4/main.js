@@ -43,7 +43,7 @@ const searchPokemon = async (event) => {
   const fetchedPokemon = await requestPokemon(searchedPokemonId);
 
   if (!fetchedPokemon) {
-    searchMsg.textContent = `El Pokémon con ID ${searchedPokemonId} no existe.`;
+    searchMsg.textContent = `El Pokemon con ID ${searchedPokemonId} no existe.`;
     cardContainer.innerHTML = "";
     form.reset();
     return;
