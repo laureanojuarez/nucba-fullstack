@@ -1,16 +1,24 @@
+import {ContainerSectionPadre} from "../../styles/containerSectionPadre";
+import {Button} from "../button/Button";
+import {Input} from "../input/Input";
+import {ContainerInput} from "../input/input-styles";
+import {ComponentTask} from "../task/CardTask";
+import {ContainerTask} from "../task/taks-styles";
+
 export const ContainerSection = () => {
   return (
     <>
-      <h1>Nuctaks</h1>
-      <input type="text" />
-      <button>Agregar</button>
+      <ContainerSectionPadre>
+        <h1>Nuctaks</h1>
+        <ContainerInput>
+          <Input />
+        </ContainerInput>
 
-      <p>Tarea1</p>
-      <button>Borrar</button>
-      <p>Tarea2</p>
-      <button>Borrar</button>
-
-      <button>Borrar todas</button>
+        <ContainerTask>
+          <ComponentTask />
+        </ContainerTask>
+        <Button>Borrar todas</Button>
+      </ContainerSectionPadre>
     </>
   );
 };
