@@ -1,7 +1,7 @@
-import {ContainerSection} from "./components/section/containerSection";
+import {Section} from "./components/section/Section";
 
 const App = () => {
-  return <ContainerSection />;
+  return <Section />;
 };
 
 export default App;
