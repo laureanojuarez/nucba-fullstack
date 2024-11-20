@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const ButtonStyled = styled.button`
-  padding: ${({padding}) => padding || "10px 20px"};
+  padding: ${(props) => props.padding || "10px 20px"};
   color: white;
-  background-color: ${({bgColor}) => bgColor || "#ff2551"};
+  background-color: ${({bgColor}) => bgColor || "#ff334f"};
   border: none;
   border-radius: 5px;
   cursor: pointer;
 `;
 
-export const Button = ({label, bgColor = "#ff2551", padding = "10px 20px"}) => {
+export const Button = ({label, bgColor, padding}) => {
   return (
     <ButtonStyled bgColor={bgColor} padding={padding}>
       {label}

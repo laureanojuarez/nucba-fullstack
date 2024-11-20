@@ -5,10 +5,12 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 `;
