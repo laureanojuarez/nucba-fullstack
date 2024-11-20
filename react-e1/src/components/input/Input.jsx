@@ -14,12 +14,11 @@ export const InputStyled = styled.input`
   height: 100%;
   padding: 0px 10px;
 `;
-
 export const Input = () => {
   return (
     <DivInput>
       <InputStyled placeholder="Que desea agregar?" />
-      <Button label={"Agregar"} bgColor={"#3364ff"} />
+      <Button label={"Agregar"} $bgColor={"#3364ff"} />
     </DivInput>
   );
 };
