@@ -17,7 +17,7 @@ export const InputStyled = styled.input`
 export const Input = () => {
   return (
     <DivInput>
-      <InputStyled placeholder="Que desea agregar?" />
+      <InputStyled placeholder="Que tarea desea agregar?" />
       <Button label={"Agregar"} $bgColor={"#3364ff"} />
     </DivInput>
   );
