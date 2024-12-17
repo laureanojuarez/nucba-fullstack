@@ -11,4 +11,12 @@ export const SectionInput = styled.section`
     border-radius: 5px;
     padding: 0px 10px;
   }
+
+  @media (max-width: 768px) {
+    & input {
+      padding: 10px;
+    }
+
+    flex-direction: column;
+  }
 `;

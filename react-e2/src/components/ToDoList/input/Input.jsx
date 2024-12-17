@@ -16,7 +16,7 @@ export const Input = () => {
         />
         <Button
           label="Agregar"
-          bgcolor={"blue"}
+          bgcolor={"#3364ff"}
           padding="10px 15px"
           onClick={addTask}
         />
