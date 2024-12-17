@@ -1,18 +1,12 @@
-import {Input} from "./components/input/Input";
-import {Section} from "./components/section/Section";
-import {Task} from "./components/task/Task";
-import {ContextProvider} from "./context/myContext";
+import {ToDoList} from "./components/ToDoList/ToDoList";
+import {TaskProvider} from "./context/ContextTask";
 
 const App = () => {
   return (
     <>
-      <Section>
-        <h1>Nuctask</h1>
-        <ContextProvider>
-          <Input />
-        </ContextProvider>
-        <Task />
-      </Section>
+      <TaskProvider>
+        <ToDoList />
+      </TaskProvider>
     </>
   );
 };
