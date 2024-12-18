@@ -6,17 +6,25 @@ export const TaskContext = createContext();
 export const TaskProvider = ({children}) => {
   const [tasks, setTasks] = useState(["Tarea 1", "Tarea 2"]);
   const [newTask, setNewTask] = useState("");
+  const [error, setError] = useState("");
 
   const handleInputChange = (event) => {
     setNewTask(event.target.value);
+    setError("");
   };
 
   const addTask = () => {
     console.log("Agregando tarea");
-    if (newTask.trim() !== "") {
-      setTasks([...tasks, newTask]);
-      setNewTask("");
+    if (newTask.trim() === "") {
+      setError("La tarea no puede estar vacia");
+      return;
     }
+    if (tasks.includes(newTask)) {
+      setError("La tarea ya existe");
+      return;
+    }
+    setTasks([...tasks, newTask]);
+    setNewTask("");
   };
 
   const deleteTask = (index) => {
@@ -32,7 +40,14 @@ export const TaskProvider = ({children}) => {
 
   return (
     <TaskContext.Provider
-      value={{tasks, handleInputChange, addTask, deleteTask, deleteAllTasks}}
+      value={{
+        tasks,
+        handleInputChange,
+        addTask,
+        deleteTask,
+        deleteAllTasks,
+        error,
+      }}
     >
       {children}
     </TaskContext.Provider>
