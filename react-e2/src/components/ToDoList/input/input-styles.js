@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SectionInput = styled.section`
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
   & input {
@@ -14,7 +15,6 @@ export const SectionInput = styled.section`
     color: red;
   }
   @media (max-width: 768px) {
-    flex-direction: column;
     & input {
       padding: 10px;
     }
