@@ -38,18 +38,16 @@ export const TaskProvider = ({children}) => {
     setTasks([]);
   };
 
+  const taskData = {
+    tasks,
+    handleInputChange,
+    addTask,
+    deleteTask,
+    deleteAllTasks,
+    error,
+  };
+
   return (
-    <TaskContext.Provider
-      value={{
-        tasks,
-        handleInputChange,
-        addTask,
-        deleteTask,
-        deleteAllTasks,
-        error,
-      }}
-    >
-      {children}
-    </TaskContext.Provider>
+    <TaskContext.Provider value={taskData}>{children}</TaskContext.Provider>
   );
 };
