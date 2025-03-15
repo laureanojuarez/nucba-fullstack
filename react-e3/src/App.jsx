@@ -1,14 +1,13 @@
-import { MainStyled } from "./assets/global-styles";
-import { ToDoList } from "./components/ToDoList/ToDoList";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
+import { ToDoList } from "./components/ToDoList/ToDoList";
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <MainStyled>
+      <main className="flex justify-center items-center min-h-screen">
         <ToDoList />
-      </MainStyled>
+      </main>
     </Provider>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { add, clear, deleteTask } from "./taskSlice";
-import { Button } from "../../components/button/button";
+import Button from "../../components/button/button";
 
 export function AddTask() {
   const tasks = useSelector((state) => state.tasks.value);
@@ -17,36 +17,40 @@ export function AddTask() {
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button type="submit">Add Task</button>
-        </form>
-
-        <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>
-              {task}
-              <Button
-                label={"Delete"}
-                onClick={() => dispatch(deleteTask(index))}
-              />
-            </li>
-          ))}
-        </ul>
-
-        <Button
-          label={"Borrar todos"}
-          width="100%"
-          padding="10px"
-          onClick={() => dispatch(clear())}
+    <div className="flex flex-col items-center gap-4 w-full">
+      <form onSubmit={handleSubmit} className="flex h-10 w-full gap-2">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="border border-gray-300 rounded-md w-full h-10"
+          placeholder="Que tarea deseas agregar?"
         />
-      </div>
+        <Button type="submit" className="px-4">
+          Agregar
+        </Button>
+      </form>
+
+      <ul className="flex flex-col w-full gap-2 px-3">
+        {tasks.map((task, index) => (
+          <li key={index} className="flex justify-between items-center">
+            {task}
+            <Button
+              onClick={() => dispatch(deleteTask(index))}
+              className="bg-red-500 py-1 px-2"
+            >
+              Borrar
+            </Button>
+          </li>
+        ))}
+      </ul>
+
+      <Button
+        onClick={() => dispatch(clear())}
+        className="bg-red-500 w-full py-2"
+      >
+        Borrar todos
+      </Button>
     </div>
   );
 }

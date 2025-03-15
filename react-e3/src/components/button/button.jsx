@@ -1,20 +1,13 @@
-import { ButtonStyled } from "./button-styled";
-
-export const Button = ({
-  label,
-  bgcolor = "#ff334f",
-  padding = "5px 10px",
-  onClick,
-  width,
-}) => {
+const Button = ({ children, onClick, className = "", type = "button" }) => {
   return (
-    <ButtonStyled
-      bgcolor={bgcolor}
-      padding={padding}
+    <button
+      type={type}
       onClick={onClick}
-      width={width}
+      className={` bg-blue-600 text-white rounded-lg hover:bg-gray-800 transition ${className}`}
     >
-      {label}
-    </ButtonStyled>
+      {children}
+    </button>
   );
 };
+
+export default Button;

@@ -1,12 +1,10 @@
-import { ToDoListStyled } from "./todolist-styled";
-import { Button } from "../button/button";
 import { AddTask } from "../../features/Task/Task";
 
 export const ToDoList = () => {
   return (
-    <ToDoListStyled>
-      <h1>Nucstacks</h1>
+    <div className="flex flex-col items-center w-[600px] gap-4 rounded-lg bg-white 100 p-4 shadow-md">
+      <h1 className="text-2xl font-bold">Nucstacks</h1>
       <AddTask />
-    </ToDoListStyled>
+    </div>
   );
 };
