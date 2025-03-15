@@ -3,11 +3,16 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { add, clear, deleteTask } from "./taskSlice";
 import Button from "../../components/button/button";
+import { useEffect } from "react";
 
 export function AddTask() {
   const tasks = useSelector((state) => state.tasks.value);
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
