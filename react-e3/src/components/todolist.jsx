@@ -1,4 +1,4 @@
-import { AddTask } from "../../features/Task/Task";
+import { AddTask } from "../features/Task/Task";
 
 export const ToDoList = () => {
   return (
