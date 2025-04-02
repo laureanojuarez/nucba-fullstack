@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: JSON.parse(localStorage.getItem("tasks")),
+  value: JSON.parse(localStorage.getItem("tasks")) || [],
 };
 
 export const taskSlice = createSlice({
@@ -20,7 +20,6 @@ export const taskSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { add, clear, deleteTask } = taskSlice.actions;
 
 export default taskSlice.reducer;

@@ -1,9 +1,9 @@
-import React from "react";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { add, clear, deleteTask } from "./taskSlice";
 import Button from "../../components/button/button";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export function AddTask() {
   const tasks = useSelector((state) => state.tasks.value);
